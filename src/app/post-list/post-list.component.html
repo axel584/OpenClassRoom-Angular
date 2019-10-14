@@ -1,0 +1,19 @@
+<div class="container">
+        <div class="row">
+          <div class="col-xs-12">
+            <ul class="list-group">
+              <h2>Posts ({{posts.length}})</h2>
+              <li class="list-group-item" *ngFor="let post of posts;let i =index"  [ngClass]="{'list-group-item-success':post.loveIts>0,'list-group-item-danger':post.loveIts<0}">
+                <div class="container">
+                    <h1>{{post.title}}</h1>
+                    <i>{{post.date | date:'short'}}</i>
+                </div>
+                <p>{{post.content}}</p>
+                <button type="button" class="btn btn-xs btn-success" (click)="onLove(post)">Love it !</button> 
+                <button type="button" class="btn btn-xs btn-danger" (click)="onDontLove(post)">Don't love it !</button>
+                <button type="button" class="btn btn-danger pull-right" (click)="onDeletePost(post)">Supprimer</button>          
+            </li> 
+            </ul>
+        </div>
+    </div>
+</div>   
