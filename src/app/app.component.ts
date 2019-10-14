@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-
+import * as firebase from 'firebase';
 import {Post} from './post';
 
 @Component({
@@ -10,33 +10,20 @@ import {Post} from './post';
 export class AppComponent {
   title = 'blog';
 
-  titi = 'coucou';
 
-  posts : Post[] = [
-    new Post('Mon Premier post','Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'),
-    new Post('Mon Deuxième post','Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'),
-    new Post('Mon Troisième post','Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.')
-  ];
   
-  /*posts = [
-    {
-      title: 'Mon Premier post',
-      content : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
-      LoveIts : 0,
-      date: new Date()
-    },
-    {
-      title: 'Mon Deuxième post',
-      content : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
-      LoveIts : 0,
-      date: new Date()
-    },
-    {
-      title: 'Mon Troisième post',
-      content : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
-      LoveIts : 0,
-      date: new Date()
-    }
-  ];*/
+  constructor() {
+    var firebaseConfig = {
+      apiKey: "AIzaSyBpKgf3tjEPgTFPxk4k5wQZkyEo-xSKDbQ",
+      authDomain: "http-client-demo-97bd3.firebaseapp.com",
+      databaseURL: "https://http-client-demo-97bd3.firebaseio.com",
+      projectId: "http-client-demo-97bd3",
+      storageBucket: "http-client-demo-97bd3.appspot.com",
+      messagingSenderId: "943185286554",
+      appId: "1:943185286554:web:4b29a9c8ffb450a6"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+  }
 
 }
